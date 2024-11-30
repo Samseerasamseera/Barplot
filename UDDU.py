@@ -3,8 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch
 
+#enter gene and site 
+gene = 'ABCC1'
+site = 'S918'
+
 # Load data from the Excel file
-filepath=r"C:\Users\Admin\Downloads\ABCC1_S918__UDDU_final_Data1_Bin_comp_Filtered_Extracted (1).xlsx"
+
+filepath=r"C:\Users\Admin\Downloads\Barplot_format_file.xlsx"
 sheet_name="Sheet1"
 
 df = pd.read_excel(filepath,sheet_name=sheet_name)
@@ -83,5 +88,5 @@ for i, row in top_data.iterrows():
 
 ax.axhline(y=0, color="gray", linestyle="-", lw=0.5)
 
-plt.savefig("MAST2_S1504_UUDD_new_dynamic.svg", format="svg", dpi=300)
+plt.savefig(f"{gene}_{site}_UDDU_plot.svg", format="svg", dpi=300)
 
